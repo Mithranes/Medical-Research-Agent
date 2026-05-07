@@ -1,11 +1,11 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, FileResponse
 from pydantic import BaseModel
 from typing import List, Optional
 import json
 import asyncio
-
+import os
 from agent import MedicalResearchAgent
 
 app = FastAPI(title="Medical Research Agent API", version="1.0.0")
@@ -33,8 +33,8 @@ class ChatResponse(BaseModel):
     tools_used: List[str] = []
 
 @app.get("/")
-async def root():
-    return {"status": "Medical Research Agent running", "docs": "/docs"}
+async def serve_frontend():
+    return FileResponse(os.path.join("index.html"))
 
 @app.get("/health")
 async def health():

@@ -145,7 +145,7 @@
       </select>
       <div id="status-row">
         <div id="status-dot"></div>
-        <span id="status-label">Enter Groq API key</span>
+        <span id="status-label">Enter OpenAI API key</span>
       </div>
     </div>
   </div>
@@ -199,7 +199,7 @@
 </div>
 
 <script>
-const API_BASE = 'window.location.origin';
+const API_BASE = window.location.origin;
 let sessions = [];
 let activeSession = null;
 let isLoading = false;
@@ -241,14 +241,14 @@ function showWelcome() {
     <div id="welcome">
       <div class="icon">🔬</div>
       <h2>Medical Research Agent</h2>
-      <p>Powered by LangGraph + FastAPI + Groq. Ask about medical literature, drug interactions, clinical guidelines, and more.</p>
+      <p>Powered by LangGraph + FastAPI + OpenAI. Ask about medical literature, drug interactions, clinical guidelines, and more.</p>
       <div class="suggestions">
         <button class="suggestion-btn" onclick="useSuggestion(this)">What are the latest treatments for type 2 diabetes?</button>
         <button class="suggestion-btn" onclick="useSuggestion(this)">Drug interactions between warfarin and aspirin</button>
         <button class="suggestion-btn" onclick="useSuggestion(this)">Explain the mechanism of GLP-1 receptor agonists</button>
         <button class="suggestion-btn" onclick="useSuggestion(this)">Summarize recent research on Alzheimer's biomarkers</button>
       </div>
-      <p class="api-note">Get a free Groq API key at <a href="https://console.groq.com" target="_blank">console.groq.com</a></p>
+      <p class="api-note">Get an OpenAI API key at <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com</a></p>
     </div>`;
 }
 
